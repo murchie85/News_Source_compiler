@@ -27,7 +27,7 @@ else:
 # Init API
 newsapi = NewsApiClient(api_key=ACCESS_TOKEN)
 
-news_keyname_array = ['BBC,bbc-news', 'abc,abc-news','cnn,cnn','fox,fox-news','independent,independent','mirror,mirror','metro,metro','rt,rt','daily_mail,daily-mail']
+news_keyname_array = ['BBC,bbc-news', 'abc,abc-news','cnn,cnn','fox,fox-news','independent,independent','mirror,mirror','metro,metro','rt,rt','daily_mail,daily-mail', 'Theguardian.com' , 'Sky.com']
 news_array = []
 
 print("PULLING NEWS HEADLINES - PLEASE WAIT .......")
