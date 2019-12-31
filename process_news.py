@@ -51,7 +51,7 @@ data = []                                      # ALL NEWS DATA FROM LOCAL NEWS J
 
 # REQUESTING NEW DATA
 newsapi = NewsApiClient(api_key=ACCESS_TOKEN)  # INITIALISING newsapi object
-news_keyname_array = ['bbc-news', 'abc-news','cnn','fox-news','independent','mirror','metro','daily-mail', 'Theguardian.com' , 'Sky.com', 'the-new-york-times', 'al-jazeera-english']
+news_keyname_array = ['bbc-news', 'abc-news','cnn','fox-news','independent','mirror','metro','daily-mail', 'Theguardian.com' , 'Sky.com', 'the-new-york-times', 'al-jazeera-english', 'reuters', 'the-hill' , 'breitbart-news', 'the-verge', 'the-huffington-post']
 news_array = []
 
 
