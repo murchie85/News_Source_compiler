@@ -2,7 +2,7 @@
 
 ![NEWS](http://fivebars.co.uk/wp-content/uploads/2018/08/news-1.jpg)
 
-This project utilises the awesome[newsAPI](https://newsapi.org/s/uk-news-api) , to pull down the latest news articles, descriptions and other information from a select amount of news sources. This project then compiles those lists into a daily folder, as the API can only get a select slice of the news, it will run three times a day to build up news data which in the future could be used to drive text generation, news comparisons and so on.
+This project utilises the awesome  [newsAPI](https://newsapi.org/s/uk-news-api) , to pull down the latest news articles, descriptions and other information from a select amount of news sources. This project then compiles those lists into a daily folder, as the API can only get a select slice of the news, it will run three times a day to build up news data which in the future could be used to drive text generation, news comparisons and so on.
 
 Because the API returns json, it's easier to just save json files for each source, then collate those files into one CSV. This can then be appeneded throughout the day, week and year.  
 
