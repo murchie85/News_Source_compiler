@@ -1,9 +1,10 @@
-# NEWS HEADLINE GENERATOR 
+# NEWS HEADLINE COMPILER 
 
 ![NEWS](http://fivebars.co.uk/wp-content/uploads/2018/08/news-1.jpg)
 
  - [Overview](#OVERVIEW)
  - [Instructions](#INSTRUCTIONS)
+ - [Pip Requirements](#PIP-REQUIREMENTS)
  - [Selected Sources](#SELECTED-NEWS-SOURCES)
  - [Available Sources](#AVAILABLE-NEWS-SOURCES)
 
@@ -16,11 +17,27 @@ Because the API returns json, it's easier to just save json files for each sourc
 
 This project is fully open source and mostly for fun, if any future work is aimed at generating revenue, you must comply with the newsAPI policy and upgrade from Developer. I may do this if I find a useful business case based upon my exploration here. 
 
-
-The data obtained will 
-
+ There is incomplete code you can ignore in `quiz_incomplete` folder.
+  
 
 ## INSTRUCTIONS
+
+1. Sign up to [newsAPI](https://newsapi.org/s/uk-news-api), generate keys **(it will tell you how to)** and store in a parent directory of this one called `keys`, or simply change the key path in the python code. 
+2. Create a folder called `data` at same level as the python code
+3. run `python process_news.py` from command line / terminal.
+4. Program will pull down news articles and store them in data folder, creating a new folder for each day you run it. 
+
+  
+## PIP REQUIREMENTS
+
+```
+pandas
+json
+os
+datetime
+newsapi
+```
+
 
 ## SELECTED NEWS SOURCES 
 
