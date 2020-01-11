@@ -30,15 +30,17 @@
 import json
 import os
 from datetime import date
-from newsapi import NewsApiClient
+from newsapi.newsapi_client import NewsApiClient
 import pandas as pd
 
 # IMPORT API KEYS
 f = open("../keys/api.txt", "r")
 keys = f.read()
 f.close()
-ACCESS_TOKEN = keys
-
+if keys[-1:] == "\n":
+    ACCESS_TOKEN = keys[-1:]
+else:
+    ACCESS_TOKEN = keys
 
 #-------------------------------------------------------------------------------------------
 #   PARMS SECTION 

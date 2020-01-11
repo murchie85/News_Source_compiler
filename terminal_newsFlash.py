@@ -30,25 +30,34 @@ df = df.sample(frac=1) # shuffle
 # BUFFER PRINT
 
 def slow_print(s):
+    s = str(s)
     for c in s:
         sys.stdout.write(c)
         sys.stdout.flush()
         time.sleep(0.2)
 
-
 def med_print(s):
+    s = str(s)
     for c in s:
-        sys.stdout.write(c)
-        sys.stdout.flush()
-        time.sleep(0.10)
+        try:
+            sys.stdout.write(c)
+            sys.stdout.flush()
+            time.sleep(0.10)
+        except:
+            pass
 
 def fast_print(s):
+    s = str(s)
     for c in s:
-        sys.stdout.write(c)
-        sys.stdout.flush()
-        time.sleep(0.05)
+        try:
+            sys.stdout.write(c)
+            sys.stdout.flush()
+            time.sleep(0.05)
+        except:
+            pass
 
 def superfast_print(s):
+    s = str(s)
     for c in s:
         sys.stdout.write(c)
         sys.stdout.flush()
