@@ -36,7 +36,7 @@ pandas
 json
 os
 datetime
-newsapi
+newsapi-python
 ```
 
 
