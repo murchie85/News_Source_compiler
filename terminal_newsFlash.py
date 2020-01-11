@@ -80,7 +80,7 @@ for index, row in df.iterrows():
 	med_print((str(row['title'].upper())))
 	print('')
 	print('')
-	fast_print(row['description'])
+	fast_print(str(row['description']))
 	print('')
 	time.sleep(0.8)
 	print('')
