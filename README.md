@@ -7,6 +7,7 @@
  - [Pip Requirements](#PIP-REQUIREMENTS)
  - [Selected Sources](#SELECTED-NEWS-SOURCES)
  - [Available Sources](#AVAILABLE-NEWS-SOURCES)
+ - [Programatic News Streaming](#PROGRAMATIC-NEWS-STREAMING)
 
 # OVERVIEW
 
@@ -183,6 +184,26 @@ wirtschafts-woche
 xinhua-net
 ynet
 ```
+
+# PROGRAMATIC NEWS STREAMING
+
+
+In order to get this working, you need to have news data saved locally *(in future I will show a streaming option, which is really easy but will abuse the limit restrictions news api enforces, so best to run locally)*.    
+
+**IF YOU HAVEN'T FOLLOWED ANY OF THE INSTRUCTIONS ABOVE THEN...**
+
+1. Clone this repo
+2. CD into the repo and create a data folder
+3. Run `python process_news.py` this will pull news down into your data folder and label it with todays date.
+4. Run `python terminal_newsFlash.py` this will now do the news reporting :) 
+  
+  
+Depending on your needs you might like me want to schedule `process_news.py` a couple of times a day to build the news up ready to go (I do this as I plan to perform analysis on historical data).
+
+
+
+
+
 
 **Powered by news API**
 [link](https://newsapi.org/s/uk-news-api)
