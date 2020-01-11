@@ -31,6 +31,7 @@ This project is fully open source and mostly for fun, if any future work is aime
   
 ## PIP REQUIREMENTS
 
+Python Version `3.7.3`
 ```
 pandas
 json
