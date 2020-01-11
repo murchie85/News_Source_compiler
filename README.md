@@ -197,12 +197,34 @@ In order to get this working, you need to have news data saved locally *(in futu
 3. Run `python process_news.py` this will pull news down into your data folder and label it with todays date.
 4. Run `python terminal_newsFlash.py` this will now do the news reporting :) 
   
-  
+You will still need to install dependencies from the `PIP REQUIREMENTS` section and also sign up to news API (shown above in instructions section).
 Depending on your needs you might like me want to schedule `process_news.py` a couple of times a day to build the news up ready to go (I do this as I plan to perform analysis on historical data).
 
 
 
+# COMMON ISSUES
 
+If you get a traceback issue like below: 
+
+```
+Traceback (most recent call last):
+  File "process_news.py", line 33, in <module>
+    from newsapi import NewsApiClient
+ImportError: cannot import name NewsApiClient
+```
+  
+Then you may want to change the `process_news.py` file import statement from `from newsapi import NewsApiClient` to `from newsapi.newsapi_client import NewsApiClient` . 
+   
+
+If you get the following similar error:
+```
+File "process_news.py", line 37, in <module>
+    f = open("../keys/api.txt", "r")
+FileNotFoundError: [Errno 2] No such file or directory: '../keys/api.txt'
+```
+  
+  
+You need to sign up to newsapi and download the keys, you can do that [here](https://newsapi.org/) 
 
 
 **Powered by news API**
