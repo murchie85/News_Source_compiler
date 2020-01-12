@@ -50,7 +50,7 @@ data = []                                      # ALL NEWS DATA FROM LOCAL NEWS J
 
 # REQUESTING NEW DATA
 newsapi = NewsApiClient(api_key=ACCESS_TOKEN)  # INITIALISING newsapi object
-news_keyname_array = ['bbc-news', 'abc-news','cnn','fox-news','independent','mirror','metro','daily-mail', 'Theguardian.com' , 'Sky.com', 'the-new-york-times', 'al-jazeera-english', 'reuters', 'the-hill' , 'breitbart-news', 'the-verge', 'the-huffington-post']
+news_keyname_array = ['bbc-news', 'abc-news','cnn','fox-news','independent','cbs-news','metro','nbc-news', 'Theguardian.com' , 'Sky.com', 'the-new-york-times', 'al-jazeera-english', 'reuters', 'the-hill' , 'breitbart-news', 'the-verge', 'the-huffington-post', 'Telegraph.co.uk']
 news_array = []
 
 
@@ -82,7 +82,7 @@ for item in news_keyname_array:
     news_key = item
     json_item = newsapi.get_top_headlines(sources=news_key)
     if json_item['totalResults'] == 0:
-        print("Request for the " + str(item) + " news source is empty, skipping")
+        print("Request for the " + str(item).upper() + "  source is empty, skipping")
         print('')
         continue
     news_array.append(json_item)

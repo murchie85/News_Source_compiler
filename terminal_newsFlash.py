@@ -46,7 +46,7 @@ def fast_print(s):
     for c in s:
         sys.stdout.write(c)
         sys.stdout.flush()
-        time.sleep(0.05)
+        time.sleep(0.03)
 
 def superfast_print(s):
     for c in s:
@@ -66,7 +66,9 @@ time.sleep(1)
 print("**********************************************************************************************")
 print('')
 print('')
-
+print(str(today))
+print('')
+print('')
 fast_print('HERE IS THE NEWS.......')
 print('')
 print('')
@@ -77,7 +79,7 @@ for index, row in df.iterrows():
 	med_print('*' + str(row['source']) + '*')
 	print('')
 	print('')
-	med_print((str(row['title'].upper())))
+	fast_print((str(row['title'].upper())))
 	print('')
 	print('')
 	fast_print(str(row['description']))
