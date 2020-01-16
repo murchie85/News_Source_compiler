@@ -67,6 +67,7 @@ print("*************************************************************************
 print('')
 print('')
 print(str(today))
+print('Number of articles: ' + str(df.shape[0]))
 print('')
 print('')
 fast_print('HERE IS THE NEWS.......')

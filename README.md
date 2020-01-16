@@ -1,6 +1,6 @@
 # NEWS HEADLINE COMPILER 
 
-![NEWS](http://fivebars.co.uk/wp-content/uploads/2018/08/news-1.jpg)
+![NEWS](image/download.jpg)
 
  - [Overview](#OVERVIEW)
  - [Instructions](#INSTRUCTIONS)
