@@ -30,9 +30,11 @@
 import json
 import os
 from datetime import date
+# note you need to install pip install newsapi-python
 from newsapi import NewsApiClient
-#from newsapi.newsapi_client import NewsApiClient
 import pandas as pd
+import requests 
+
 # IMPORT API KEYS
 f = open("../keys/api.txt", "r")
 keys = f.read()
@@ -80,14 +82,25 @@ print('')
 for item in news_keyname_array:
     print('processing ' + str(item + ' headlines'))
     news_key = item
-    json_item = newsapi.get_top_headlines(sources=news_key)
-    if json_item['totalResults'] == 0:
+
+    # VERSION 2 IS BROKEN
+    #json_item = newsapi.get_top_headlines(sources=news_key)
+
+
+    newsURL = 'https://newsapi.org/v1/articles?source=' + str(news_key) + '&apiKey=' + ACCESS_TOKEN
+    newsBlob = requests.get(newsURL)
+    json_item = json.loads(newsBlob.text)
+    #print(json_item)
+
+
+    if len(json_item) == 0:
         print("Request for the " + str(item).upper() + "  source is empty, skipping")
         print('')
         continue
+    if(json_item['status'] =='error'):
+        print(json_item)
+        continue
     news_array.append(json_item)
-    print('COMPLETE - appending to array .......')
-    print('')
 
 
 #-------------------------------------------------------------------------------------------
@@ -102,17 +115,25 @@ df = pd.DataFrame(columns=['source','author','title','description','url', 'reque
 print('iterating through ')
 x = 0 
 for news_outlet in range (0, len(news_array)):
+    if('articles' not in news_array[news_outlet].keys()):
+        print('Article does not exist for ' + str(news_array[news_outlet]))
+        print('skipping...')
+        continue
     for article_number in range (0, len(news_array[news_outlet]['articles'])):
-        source         = news_array[news_outlet]['articles'][article_number]['source']['name']
+        source         = news_outlet
         author         = news_array[news_outlet]['articles'][article_number]['author']
         title          = news_array[news_outlet]['articles'][article_number]['title']
         description    = news_array[news_outlet]['articles'][article_number]['description']
         url            = news_array[news_outlet]['articles'][article_number]['url']
         publishedAt    = news_array[news_outlet]['articles'][article_number]['publishedAt']
+        if(publishedAt==None):
+            publishedAt = today
+
         requested_date = today
-        content        = news_array[news_outlet]['articles'][article_number]['content']
+        if('content' not in news_array[news_outlet]['articles'][article_number].keys()):
+            content        = description
         df = df.append([{ 'source': source, 'author': author, 'title': title, 'description': description, 'url':url, 'publishedAt': publishedAt, 'requested_date': requested_date, 'content': content    }])
-        x = x + 1 
+        x = x + 1
 
 print('PROCESSING COMPLETE')
 print('number of articles processed are : ' + str(x))
